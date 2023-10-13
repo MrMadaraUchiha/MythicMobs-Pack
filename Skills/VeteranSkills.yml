@@ -1,0 +1,269 @@
+
+PoisonFangVeteran:
+    Cooldown: 60
+    Conditions:
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="&d<mob.name>&f<&co> Feel my poison run through your veins!"} @PlayersInRadius{r=40}
+    - delay 20
+    - potion{type=SLOW;duration=200;level=2}
+    - potion{type=CONFUSION;duration=200;level=1}
+    - potion{type=POISON;duration=200;level=2}
+LifeLeechVeteran:
+    Cooldown: 60
+    Conditions:
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="&d<mob.name>&f<&co> Can you feel the life leaving you?"} @PlayersInRadius{r=40}
+    - delay 20
+    - heal{amount=25} @self
+    - damage{amount=5}
+RegenVeteran:
+    Cooldown: 60
+    Conditions:
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="&d<mob.name>&f<&co> I am everlasting!"} @PlayersInRadius{r=40}
+    - delay 20
+    - potion{type=REGENERATION;duration=200;level=2} @self
+CripplingShotVeteran:
+    Cooldown: 60
+    Conditions:
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="&d<mob.name>&f<&co> This will slow you down!"} @PlayersInRadius{r=40}
+    - delay 20
+#    - arrowvolley{a=1;s=10;v=30;f=0;rd=200} @Target
+    - shoot{type=ARROW;velocity=30;damage=4} @Target
+    - potion{type=SLOW;duration=200;level=2}
+BurningShotVeteran:
+    Cooldown: 60
+    Conditions:
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="&d<mob.name>&f<&co> You will be nothing but ashes!"} @PlayersInRadius{r=40}
+    - delay 20
+#    - arrowvolley{a=1;s=10;v=30;f=0;rd=200} @Target
+    - shoot{type=ARROW;velocity=30;damage=4} @Target
+    - ignite{ticks=100} @Target
+VanishVeteran:
+    Cooldown: 60
+    Conditions:
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="&d<mob.name>&f disappears!"} @PlayersInRadius{r=40}
+    - delay 10
+    - potion{type=INVISIBILITY;duration=200;level=2}
+SmashAttackVeteran:
+    Cooldown: 8
+    Conditions:
+    - targetwithin{d=25}
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{cooldown=30;m="<mob.name>&f<&co> You can't escape me!"} @PlayersInRadius{r=40}
+    - teleport @target
+    - effect:sound{s=mob.endermen.portal;volume=1.0;pitch=0.5}
+    - delay 10
+    - damage{amount=5;ignorearmor=true} @PlayersInRadius{r=5}
+    - throw{velocity=10;velocityY=5} @PlayersInRadius{r=5}
+    - effect:explosion @Self
+BlindVeteran:
+    Cooldown: 30
+    Conditions:
+    - targetwithin{d=5}
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="<mob.name>&f<&co> Darkness closes in on you!"} @PlayersInRadius{r=40}
+    - delay 20
+    - potion{type=BLINDNESS;duration=200;level=2}
+PullVeteran:
+    Cooldown: 30
+    Conditions:
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="<mob.name>&f<&co> Get over here!"} @PlayersInRadius{r=40}
+    - delay 20
+    - forcepull{spread=1} @PlayersInRadius{r=40}
+SummonDarkSpriteVeteran:
+    Cooldown: 20
+    Conditions:
+    - offgcd
+    Skills:
+    - message{m="<mob.name>&f<&co> Sprites, arise!"} @PlayersInRadius{r=40}
+    - delay 20
+    - summon{type=LesserDarkSprite;amount=1;radius=3} @Target
+    - delay 20
+    - summon{type=LesserDarkSprite;amount=1;radius=3} @Target
+    - delay 20
+    - summon{type=LesserDarkSprite;amount=1;radius=3} @Target
+    - GCD{ticks=200}
+BleedingVeteran:
+    Cooldown: 1
+    Conditions:
+    - targetwithin{d=5}
+    - targetinlineofsight true
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - message{m="You begin bleeding."} @target
+    - sound{s=damage.hit} @target
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - damage{amount=1;ia=false;pk=false;pi=false} @target ~onTimer:20
+    - damage{amount=1;ia=false;pk=false;pi=false} @target ~onTimer:20
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - damage{amount=1;ia=false;pk=false;pi=false} @target ~onTimer:20
+    - damage{amount=1;ia=false;pk=false;pi=false} @target ~onTimer:20
+    - effect:particles{particle=dripLava;amount=5;hS=1;vS=1;speed=5} @self
+    - damage{amount=1;ia=false;pk=false;pi=false} @target ~onTimer:20
+    - damage{amount=1;ia=false;pk=false;pi=false} @target ~onTimer:20
+LeapVeteran:
+    Cooldown: 10
+    Conditions:
+    - targetinlineofsight true
+    - offgcd
+    Skills:
+    - message{m="<mob.name>&f<&co> Hyah!"} @PlayersInRadius{r=40}
+    - leap{velocity=200} @target
+    - damage{amount=4} @PlayersInRadius{r=5}
+    - GCD{ticks=200}
+WitheringGraspVeteran:
+    Cooldown: 10
+    Conditions:
+    - targetwithin{d=5}
+    - targetinlineofsight true
+    - offgcd
+    Skills:
+    - GCD{ticks=200}
+    - potion{type=WITHER;duration=100;level=1}
+    - potion{type=SLOW;duration=40;level=1}
+    - damage{amount=2}
+JumpSmashVeteran:
+    Cooldown: 5
+    Conditions:
+    - targetwithin{d=5}
+    - offgcd
+    Skills:
+    - leap{velocity=200} @target
+    - jump{velocity=1}
+    - delay 10
+    - leap{velocity=200} @target
+    - delay 20
+    - pull{velocity=-5} @PlayersInRadius{r=10}
+    - effect:explosion @self
+    - damage{amount=6} @PlayersInRadius{r=10}
+    - GCD 5
+CrushingLeapVeteran:
+    Cooldown: 4
+    Conditions:
+    - offgcd
+    Skills:
+    - leap{velocity=200} @target
+    - delay 20
+    - jump{velocity=-100}
+    - effect:explosion @self
+    - damage{amount=4} @EntitiesInRadius{r=10}
+    - GCD{ticks=200}
+ShadowstepVeteran:
+    Cooldown: 30
+    Conditions:
+    - offgcd
+    Skills:
+    - message{m="<mob.name>&f<&co> You can't lock up the darkness!"} @PlayersInRadius{r=40}
+    - delay 10
+    - teleport{spreadh=2;spreadv=3} @target
+    - GCD{ticks=200}
+
+CrushingBlowVeteran:
+    Cooldown: 20
+    Conditions:
+    - offgcd
+    - targetwithin{d=2}
+    Skills:
+    - gcd{ticks=160}
+    - damage{amount=8} @target
+    - throw{velocity=20;velocityY=4} @target
+    - gcd{ticks=160}
+
+BoulderTossVeteran:
+    Cooldown: 8
+    Conditions:
+    - offgcd
+    - targetwithin{d=4} cancel
+    Skills:
+    - gcd{ticks=160}
+    - message{m="<mob.name>&f<&co> I'll crush you!"} @PIR{r=40}
+    - projectile{bulletType=BLOCK;material=STONE;onHit=BoulderTossVeteran-Hit;onTick=BoulderTossVeteran-Tick;onEnd=BoulderTossVeteran-End;i=1;hR=2.0;vR=2.0;d=800;mr=100;v=28;syo=+1.5;sfo=+1;hp=true;hnp=true;g=1;vo=0.4} @targetlocation
+BoulderTossVeteran-Hit:
+    Skills:
+    - damage{amount=14} @PlayersNearOrigin{r=3}
+BoulderTossVeteran-End:
+    Skills:
+    - effect:particles{p=block_crack;m=stone;a=200;hSpread=3.0;vSpread=3.0} @origin
+    - effect:particles{p=block_crack;m=stone;a=100;hSpread=1.0;vSpread=1.0} @origin
+    - effect:particles{p=cloud;a=40;hSpread=1.0;vSpread=1.0} @origin
+BoulderTossVeteran-Tick:
+    Skills:
+    - effect:particles{p=block_crack;m=stone;a=10;hSpread=0.5;vSpread=0.5} @origin
+
+StompVeteran:
+    Cooldown: 8
+    Conditions:
+    - offgcd
+    - targetwithin{d=4}
+    Skills:
+    - gcd{ticks=160}
+    - damage{amount=8} @PIR{r=4}
+    - throw{velocity=20;velocityY=4} @PIR{r=4}
+    - effect:particles{p=cloud;a=200;hSpread=4.0;vSpread=1.0} @self
+
+RockTossVeteran:
+    Cooldown: 3
+    Conditions:
+    - offgcd
+    Skills:
+    - gcd{ticks=160}
+#    - message{m="<mob.name>&f<&co> Sticks and stones will break your bones!"} @PIR{r=40}
+    - projectile{bulletType=ITEM;material=STONE;onHit=RockTossVeteran-Hit;onTick=RockTossVeteran-Tick;i=1;hR=2.0;vR=2.0;d=800;mr=100;v=28;syo=+1.5;sfo=+1;hp=true;hnp=true;g=1;vo=0.4} @targetlocation
+RockTossVeteran-Hit:
+    Skills:
+    - damage{amount=6} @PlayersNearOrigin{r=3}
+RockTossVeteran-End:
+    Skills:
+    - effect:particles{p=block_crack;m=stone;a=20;hSpread=3.0;vSpread=3.0} @origin
+    - effect:particles{p=block_crack;m=stone;a=10;hSpread=1.0;vSpread=1.0} @origin
+RockTossVeteran-Tick:
+    Skills:
+    - effect:particles{p=block_crack;m=stone;a=10;hSpread=0.5;vSpread=0.5} @origin
+
+RushVeteran:
+    Cooldown: 10
+    Conditions:
+    - offgcd
+    Skills:
+    - gcd{ticks=160}
+    - message{m="<mob.name>&f rushes forward!"} @PIR{r=40}
+    - lunge{v=-20} @target
+
+TossBabyGoblinVeteran:
+    Cooldown: 10
+    Conditions:
+    - offgcd
+    Skills:
+    - gcd{ticks=160}
+    - message{m="<mob.name>&f tosses a Baby Goblin!"} @PIR{r=40}
+    - projectile{bulletType=MOB;mob=BabyGoblin;onEnd=TossBabyGoblinVeteran-End;onTick=TossBabyGoblinVeteran-Tick;i=1;hR=2.0;vR=2.0;d=800;mr=100;v=28;syo=+1.5;sfo=+1;hp=true;hnp=true;g=1;vo=0.4} @targetlocation @targetlocation
+TossBabyGoblinVeteran-End:
+    Skills:
+    - summon{type=BabyGoblin;amount=1;radius=1;onSurface=true;ctt=true;itt=true} @origin
+TossBabyGoblinVeteran-Tick:
+    Skills:
+    - effect:particles{p=slime;a=10;hSpread=0.5;vSpread=0.5} @origin

@@ -1,0 +1,4 @@
+WitheringBladeStrike:
+    Cooldown: 5
+    Skills:
+    - damage{amount=2;ignoreArmor=false;repeat=5;repeatInterval=20}
