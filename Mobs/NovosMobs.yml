@@ -1,0 +1,2301 @@
+# 
+# World Mobs Pack Mobs
+# 
+ShiftingPowerDummy:
+  Type: chicken
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: true
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear
+  Health: 75
+  Damage: 0
+  Display: ''
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills:
+  - remove{delay=90} @self ~onSpawn
+  - effect:particlering{particle=witchMagic;radius=2;points=12;amount=1;hS=0.01;vS=0} @self ~onTimer:5
+  - potion{type=SLOW;duration=9999999;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=9999999;lvl=10;sP=false;hasParticles=false} @self ~onSpawn 1
+  
+ShiftingOmen:
+  Type: zombie
+  Disguise: Sh11
+  Display: '&f&lShifting Omen'
+  Equipment:
+  - stone_sword hand
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 95
+  Damage: 6
+  Faction: Codex
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=DarkShield} @self ~onTimer:420
+  - skill{s=ShiftingPower} @self ~onTimer:120
+  
+MutatedSlimeDummy:
+  Type: chicken
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: true
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 75
+  Damage: 0
+  Display: ''
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=PoisonousSlimeSpawn} @self ~onSpawn 1
+  - teleport{spreadh=15;spreadv=0} @MIR{r=15;t=IronTitan} ~onSpawn
+  - potion{type=SLOW;duration=9999999;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=9999999;lvl=10;sP=false;hasParticles=false} @self ~onSpawn 1
+  
+MutatedSlime2:
+  Type: slime
+  Equipment:
+  - stone_button:4
+  Options:
+    Size: 1
+    PreventSlimeSplit: true
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 8
+  Damage: 1
+  Display: '&f&lGreen Slime'
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills:
+  - effect:particlering{particle=slime;radius=3;points=22;amount=1;hS=0.01;vS=0} @self  ~onTimer:5
+  - potion{type=POISON;duration=100;lvl=1} @PIR{r=3} ~onTimer:5
+  
+MutatedSlime:
+  Type: zombie
+  Disguise: 5chmook
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 120
+  Damage: 8
+  Display: '&f&lMutated Slime'
+  Faction: Codex
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=PoisonousSlimes} @self ~onTimer:250
+  - skill{s=OozingBolt} @self ~onTimer:70
+  
+MissileDummy:
+  Type: chicken
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: true
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 75
+  Damage: 3.5
+  Display: ''
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills:
+  - remove{delay=110} @self ~onSpawn
+  - teleport{spreadh=15;spreadv=0} @MIR{r=15;t=IronTitan} ~onSpawn
+  - potion{type=SLOW;duration=9999999;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=9999999;lvl=10;sP=false;hasParticles=false} @self ~onSpawn 1
+  - missile{ot=TitanMissile_TICK;oh=TitanMissile_HIT;v=8;i=1;hR=1;vR=1;in=0.75;mr=40;d=100} @NearestPlayer{r=25} ~onSpawn 1
+  
+IronTitan:
+  Type: zombie
+  Disguise: BangEnergy
+  Equipment:
+  - stone_sword hand
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 120
+  Damage: 5
+  Display: '&f&lIron Titan'
+  Faction: Codex
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=EnergyBlast} @self ~onDamaged 0.15
+  - skill{s=TitanMissile} @Forward{f=0;y=10.0} ~onTimer:220
+  - skill{s=LaserBolt} @TargetLocation ~onTimer:150
+  
+IcedGhoulDummy:
+  Type: chicken
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: true
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 75
+  Damage: 0
+  Display: ''
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=DomainOfFrostFull} @self ~onTimer:10
+  - skill{s=DomainOfFrost} @self ~onSpawn 1
+  - remove{delay=200} @self ~onSpawn
+  - potion{type=SLOW;duration=9999999;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=9999999;lvl=10;sP=false;hasParticles=false} @self ~onSpawn 1
+  
+IcedGhoul:
+  Type: zombie
+  Disguise: ibim1Sucuk
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 120
+  Damage: 8
+  Display: '&f&lIced Ghoul'
+  Faction: Codex
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - prison{material=PACKED_ICE;duration=100;breakable=true} @target ~onAttack 0.25
+  - skill{s=DomainOfFrost} @self ~onTimer:350
+  - skill{s=IceShard} @self ~onTimer:150
+  
+HexedSpirit:
+  Type: vex
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  AITargetSelectors:
+  Health: 10
+  Damage: 1
+  Display: '&f&lHexed Spirit'
+  Faction: Codex
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=HexedExplosion} @self ~onTimer:5
+  - effect:particles{particle=end_rod;amount=5;hS=1;vS=1;speed=1} @self ~onSpawn 1
+  
+TreeSpiritDummy:
+  Type: chicken
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: true
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear
+  Health: 75
+  Damage: 1
+  Display: ''
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills:
+  - remove{delay=100} @self ~onSpawn
+  - potion{type=SLOW;duration=9999999;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=9999999;lvl=10;sP=false;hasParticles=false} @self ~onSpawn 1
+  - skill{s=TreeBolt} @Forward{f=0;y=15.0} ~onSpawn 1
+  
+TreeSpirit:
+  Type: zombie
+  Disguise: Contagiousx
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 120
+  Damage: 6
+  Display: '&f&lTree Spirit'
+  Faction: Codex
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=ActivateTreeDummy} @self ~onTimer:150
+  - skill{s=HexedSpirits} @self ~onTimer:350
+  
+CodexTable:
+  Type: chicken
+  Equipment:
+  Disguise: falling_block ENCHANTING_TABLE
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: true
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotoparent
+  AITargetSelectors:
+  - 0 clear
+  - 1 specificfaction Codex
+  Health: 75
+  Damage: 1
+  Display: ''
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills:
+  - potion{type=SLOW;duration=9999999;lvl=10} @self ~onSpawn 1
+  - skill{s=ActivateTable} @self ~onTimer:140
+  
+CodexBreakerOrb:
+  Type: bat
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: true
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotoparent
+  AITargetSelectors:
+  Health: 75
+  Damage: 1
+  Display: '&f&lCodex Breaker'
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=OrbExplode} @self ~onSpawn 1
+  #- skill{s=ActivateOrb} @self ~onSpawn 1
+  - skill{s=OrbEffect} @self ~onTimer:1
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hp=false} @self ~onSpawn 1
+  
+CodexBreaker:
+  Type: zombie
+  Disguise: DrulianCrow
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 85
+  Damage: 4
+  Display: '&f&lCodex Breaker'
+  Faction: Codex
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=SummonTable} @self ~onTimer:350
+  - skill{s=SummonOrbs} @self ~onTimer:240
+  - skill{s=VoidShift} @self ~onDamaged 0.15
+  
+DimensionalKillerDummy2:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - sound{s=block.portal.ambient;v=3;sc=hostile} @self ~onTimer:35
+  - skill{s=DimensionGateEffect} @self ~onTimer:5
+  - potion{type=SLOW;duration=9999999;lvl=10} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hp=false} @self ~onSpawn 1
+  - remove{delay=375} @self ~onSpawn
+  
+DimensionalKillerDummy:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=SLOW;duration=130;lvl=10} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hp=false} @self ~onSpawn 1
+  - remove{delay=75} @self ~onSpawn
+  
+DimensionalKiller:
+  Type: zombie
+  Disguise: Rex_
+  Equipment:
+  - stone_button:4
+  - iron_sword:0
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 90
+  Damage: 6
+  Display: '&f&lDimensional Killer'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=ActivateDimensionalGate} @self ~onTimer:380
+  - skill{s=SwordSlice} ~onTimer:320
+  - skill{s=ShadowStep} @self ~onTimer:190
+  
+EnderBeast:
+  Type: zombie
+  Disguise: 10PSC
+  Equipment:
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 80
+  Damage: 8
+  Display: '&f&lEnder Beast'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=ToxicPukeBolt} ~onTimer:360
+  - skill{s=RandomClawMark} ~onTimer:100
+  - skill{s=Predator} ~onTimer:20
+  
+ElectroDummy2:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=SLOW;duration=130;lvl=10} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - skill{s=LightningEffect2} @self ~onSpawn 1
+  - remove{delay=75} @self ~onSpawn
+  
+ElectroDummy:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=SLOW;duration=130;lvl=10} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - skill{s=LightningEffect} @self ~onSpawn 1
+  - remove{delay=75} @self ~onSpawn
+  
+Electro:
+  Type: zombie
+  Disguise: HighVoltage
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 95
+  Damage: 3
+  Display: '&f&lElectro'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=ElectroBolt} @targetLocation ~onTimer:150
+  - skill{s=LightningRod} ~onTimer:320
+  - skill{s=ElectricChargeTrigger} @self ~onDamaged 0.15
+  - skill{s=ElectricCharge} @self ~onTimer:5
+  
+EndWalkerDummy:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=SLOW;duration=130;lvl=10} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - skill{s=MirageSpawnEffect} @self ~onTimer:5
+  - skill{s=MirageSpawn} @self ~onSpawn 1
+  - remove{delay=105} @self ~onSpawn
+  
+EndWalkerMirage:
+  Type: zombie
+  Disguise: EndWalker
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 75
+  Damage: 3
+  Display: '&f&lEndwalker'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills: 
+EndWalker:
+  Type: zombie
+  Disguise: EndWalker
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 15
+  Damage: 1
+  Display: '&f&lEndwalker'
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  Drops:
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - skill{s=Mirage} @self ~onDamaged 0.15
+  - skill{s=WitheringBolt} ~onTimer:350
+  - skill{s=EndSlicer} ~onTimer:240
+UnholyServant:
+  Type: zombie
+  Disguise: cashlete
+  Equipment:
+  - stone_sword hand
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotoparent
+  - 2 meleeattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 20
+  Damage: 5
+  Display: '&f&lUnholy Servant'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  Modules:
+    ThreatTable: true
+  Skills: 
+  - sound{s=entity.evoker.hurt;v=3;sc=hostile} @self ~onDamaged
+  - potion{type=WITHER;duration=20;level=1;force=true} @target ~onAttack
+  - effect:particles{particle=smoke;amount=50;hS=1;vS=0.15;speed=0.01} @self ~onSpawn 1
+  
+UnholyPriest:
+  Type: zombie
+  Disguise: 50USD
+  Equipment:
+  - stone_sword hand
+  Faction: Priest
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 70
+  Damage: 2
+  Display: '&f&lUnholy Priest'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  - string 5-15 1
+  - warped_sign 1 0.25
+  - nether_gold_ore 1-3 0.25
+  - exp 10 1
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=NotCombatSoundsPriest} @self ~onTimer:200
+  - sound{s=entity.evoker.hurt;v=3;sc=hostile} @self ~onDamaged
+  - skill{s=PrayerOfDeath} @target ~onTimer:180
+  - skill{s=UnholyServants} @self ~onTimer:260
+  - skill{s=UnholyHealing} ~onDamaged 0.25
+NetherMage:
+  Type: zombie
+  Disguise: firest0rm_75
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Health: 100
+  Damage: 6
+  Display: '&f&lNether Mage'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nether_wart 1-3 0.25
+  - gold_nugget 1-5 1
+  - rotten_flesh 1-5 1
+  - gold_ingot 1 0.25
+  - exp 10 1
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=NotCombatSoundsMage} @self ~onTimer:200
+  - sound{s=entity.witch.hurt;v=3;sc=hostile} @self ~onDamaged
+  - skill{s=WarpingMagic} @target ~onTimer:200
+  - skill{s=UnstableSparks} @self ~onTimer:290
+  - skill{s=LeakingEnergy} ~onTimer:10
+  
+SoulGorgerDummy:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 1
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=SLOW;duration=130;lvl=10} @self ~onSpawn 1
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - skill{s=BlazingFlareEffect} @self ~onSpawn 1
+  - remove{delay=105} @self ~onSpawn
+  
+SoulGorger:
+  Type: zombie
+  Disguise: flamingfire25
+  Equipment:
+  - stone_sword hand
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    Disguise.ShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Health: 100
+  Damage: 5
+  Display: '&f&lSoul Gorger'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  - QUARTZ 1-5 0.5
+  - GOLD_INGOT 1 0.25
+  - BONE 1-5 1
+  - ARROW 1-5 1
+  - exp 10 1
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=NotCombatSoundsGorger} @self ~onTimer:200
+  - sound{s=entity.bee.hurt;v=3;sc=hostile} @self ~onDamaged
+  - skill{s=BlazingFlare} @self ~onTimer:320
+  - skill{s=SoulTouch} @PIR{r=15} ~onTimer:200
+  - skill{s=LeechingAura1} ~onTimer:30
+  - skill{s=LeechingAura2} ~onTimer:30
+  - skill{s=LeechingAura3} ~onTimer:30
+  - skill{s=LeechingAura4} ~onTimer:30
+  - skill{s=LeechingAura5} ~onTimer:30
+  - skill{s=LeechingAura6} ~onTimer:30
+  
+InfernalDevilDummy1:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 999
+  Skills:
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - skill{s=FlameSummon} @Self ~onSpawn
+  Options:
+    NoAI: true
+    Silent: true
+    MaxCombatDistance: 0
+InfernalDevil:
+  Type: zombie
+  Disguise: Attackroot
+  Equipment:
+  - stone_sword hand
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Health: 120
+  Damage: 5
+  Display: '&f&lInfernal Devil'
+  Drops:
+  - nautilus_shell 1-2 0.25
+  - leather 1-5 1
+  - porkchop 1-3 1
+  - gold_nugget 1-5 0.25
+  - blaze_rod 1 0.25
+  - exp 10 1
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=NotCombatSoundsDevil} @self ~onTimer:200
+  - skill{s=FlameExecute} @Self ~onDamaged 0.15
+  - skill{s=FlameTrigger} @Self ~onDamaged 0.15
+  - sound{s=entity.llama.hurt;v=2.5;p=0.5} @Self ~onDamaged
+  - sound{s=entity.llama.death;v=2.5;p=0.5} @Self ~onDeath
+  
+MagmaGolemDummy:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 1
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - sound{s=block.campfire.crackle;v=3;sc=hostile} @self ~onTimer:20
+  - potion{type=SLOW;duration=130;lvl=10} @self ~onSpawn 1
+  - skill{s=FieryBrand} ~onTimer:5
+  - skill{s=FieryBrandTrigger} @self ~onSpawn 1
+  - remove{delay=105} @self ~onSpawn
+  
+MagmaGolem:
+  Type: zombie
+  Disguise: Cheeeeeems
+  Equipment:
+  - stone_sword hand
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+    AlwaysShowName: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Health: 120
+  Damage: 20
+  Display: '&f&lMagma Golem'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - nautilus_shell 1-2 0.25
+  - magma_cream 1-5 1
+  - gold_nugget 1-3 0.25
+  - nether_quartz_ore 1-3 0.25
+  - exp 10 1
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=NotCombatSoundsMagma} @self ~onTimer:200
+  - sound{s=entity.elder_guardian.hurt;v=3;sc=hostile} @self ~onDamaged
+  - skill{s=MagmaRock} @self ~onTimer:230
+  - skill{s=SummonFieryBrand} @target ~onTimer:140
+  - skill{s=LavaSurge} @self ~onTimer:10
+  
+Octopus:
+  Type: squid
+  Equipment:
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 30
+  Damage: 1
+  Display: '&f&lOctopus'
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Drops:
+  - ink_sac 1-3 1
+  - exp 1-3 1
+  - nautilus_shell 1 0.05
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=EscapeArtist}  ~onDamaged 0.15
+  - skill{s=SquidBolt} @target  ~onTimer:200
+  - skill{s=ParalyzingTouch}  ~onTimer:140
+DarkEntityDummy:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 1
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - potion{type=SLOW;duration=130;lvl=10} @self ~onSpawn 1
+  - skill{s=VoidZoneEffect} ~onTimer:10
+  - skill{s=VoidZone} @self ~onSpawn 1
+  - remove{delay=105} @self ~onSpawn
+  
+WitheringKnightDummy:
+  Type: chicken
+  Display: 'A vortex'
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 16
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=INVISIBILITY;duration=1000000;lvl=10;hasParticles=false} @self ~onSpawn 1
+  - potion{type=SLOW;duration=130;lvl=10} @self ~onSpawn 1
+  - remove{delay=125} @self ~onSpawn
+  - skill{s=AntiDamageZone} @self ~onSpawn 1
+  - skill{s=AntiDamageZoneTimer} ~onTimer:5
+  
+DarkEntity:
+  Type: enderman
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 50
+  Damage: 1.5
+  Display: '&f&lDark Entity'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - ender_pearl 1 0.5
+  - exp 5 1
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=WarpZone} ~onTimer:360
+  - skill{s=GraspingPresence} ~onTimer:160
+  - skill{s=LingeringVoid} @target ~onDamaged 0.25
+DesertNomad:
+  Type: husk
+  Equipment:
+  Options:
+    PreventSunburn: true
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 40
+  Damage: 3
+  Display: '&f&lDesert Nomad'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - rotten_flesh 1 1
+  - bone 0-2 0.25
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{S=RadiantStrike} @target ~onTimer:120
+  - skill{s=BindingOfTheSun} @target ~onTimer:320
+SkeletalArcher:
+  Type: skeleton
+  Equipment:
+  - bow:0
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 30
+  Damage: 3
+  Display: '&f&lSkeletal Archer'
+  Drops:
+  - bone 0-2 1
+  - arrow 0-2 1
+  - exp 5 1
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=BoneShield} @self ~onDamaged =50%
+  - skill{s=ArrowBurst} @target ~onTimer:230
+  - skill{s=VolleyOfArrows} @target ~onTimer:120
+HungeringGolem:
+  Type: zombie
+  Disguise: IRON_GOLEM
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 60
+  Damage: 3
+  Display: '&f&lHungering Golem'
+  Drops:
+  - iron_ingot 3-5 1
+  - poppy 0-2 1
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=IronSkin} @self ~onDamaged 0.10
+  - skill{s=GolemSmash} ~onTimer:140
+  - skill{s=HungeringVortex} ~onTimer:340
+WitheringKnight:
+  Type: zombie
+  Disguise: wither_skeleton
+  Equipment:
+  - stone_button:4
+  - iron_sword:0
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 80
+  Damage: 6
+  Display: '&f&lWithering Knight'
+  Drops:
+  - bone 0-2 1
+  - coal 1 0.33
+  - wither_skeleton_skull 1 0.15
+  - stone_sword 1 0.085
+  - exp 5 1
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=VoidMagic} ~onTimer:210
+  - skill{s=SummonAntiDamageZone} ~onTimer:300
+  - skill{s=KnightlyDominion} ~onTimer:20
+WickedSorcerer:
+  Type: zombie
+  Disguise: Witch
+  Equipment:
+  - stone_button:4
+  Options:
+    FollowRange: 16
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 80
+  Damage: 5
+  Display: '&f&lWicked Sorcerer'
+  Drops:
+  - glass_bottle 0-2 0.125
+  - glowstone_dust 0-2 0.125
+  - redstone 0-2 0.125
+  - spider_eye 0-2 0.125
+  - sugar 0-2 0.125
+  - stick 0-2 0.25
+  - exp 5 1
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 2 players
+  Skills:
+  - skill{s=WitchBrew} ~onDamaged 0.2
+  - skill{s=RandomWitchCast} @target ~onTimer:140
+  - skill{s=RandomWitchCast2} @target ~onTimer:140
+  
+HollowKnight:
+  Type: zombie
+  Disguise: stray
+  Equipment:
+  - iron_sword:0
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 70
+  Damage: 5
+  Display: '&f&lHollow Knight'
+  Drops:
+  - bone 0-2 1
+  - arrow 0-2 1
+  - exp 5 1
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=MortalStrikeNOCD} @target ~onTimer:20
+  - skill{s=MortalStrike} @target ~onTimer:220
+  - skill{s=BladeStorm} ~onTimer:320
+GreenSlime:
+  Type: slime
+  Equipment:
+  - stone_button:4
+  Options:
+    Size: 5
+    PreventSlimeSplit: true
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 70
+  Damage: 4
+  Display: '&f&lGreen Slime'
+  Drops:
+  - slime_ball 0-5 1
+  - exp 3
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=SlimeInchor} @target ~onTimer:130
+  - skill{s=SplittingSlime} ~onDamaged 0.2
+  - skill{s=ImmortalSlime} ~onDeath 1
+  
+
+GreenSlime2:
+  Type: slime
+  Equipment:
+  - stone_button:4
+  Options:
+    Size: 1
+    PreventSlimeSplit: true
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 10
+  Damage: 3
+  Display: '&f&lGreen Slime'
+  Drops:
+  - slime_ball 0-2 1
+  - exp 1
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=SlimeInchor} @target ~onTimer:180
+  
+MagmaSlime:
+  Type: magma_cube
+  Equipment:
+  - stone_button:4
+  Options:
+    Size: 4
+    PreventSlimeSplit: true
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - PROJECTILE 0.5
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 60
+  Damage: 3
+  Display: '&f&lMagma Slime'
+  Drops:
+  - magma_cream 0-1
+  - exp 3 1
+  - nautilus_shell 1 0.25
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=BreathFlame} ~onTimer:250
+  - skill{s=FlameCircle} ~onDamaged 0.15
+DeadlySpider:
+  Type: spider
+  Equipment:
+  - stone_button:4
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 35
+  Damage: 4
+  Display: '&f&lDeadly Spider'
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Drops:
+  - string 0-2 1
+  - spider_eye 1 0.33
+  - exp 5 1
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=SpiderChoose} @target ~onTimer:120
+  - skill{s=CreepingNight} @self ~onTimer:100
+ShadeSpider:
+  Type: cave_spider
+  Equipment:
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 35
+  Damage: 4
+  Display: '&f&lShade Spider'
+  Drops:
+  - string 0-2 1
+  - spider_eye 1 0.33
+  - exp 5 1
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=RandomToxic} @PIR{r=55} ~onTimer:120
+  - skill{s=SpiderShade} ~onDamaged 0.25
+BlazingInferno:
+  Type: blaze
+  Equipment:
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - ENTITY_ATTACK 0.65
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 50
+  Damage: 4
+  Display: '&f&lBlazing Inferno'
+  Drops:
+  - blaze_rod 0-1 1
+  - exp 10 1
+  - nautilus_shell 1 0.25
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Skills:
+  - skill{s=FlamingShield} @self ~onTimer:290
+  - skill{s=FlameBolt} @target ~onTimer:80
+Ghoul:
+  Type: zombie
+  Equipment:
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: false
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    MaxCombatDistance: 10
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 30
+  Damage: 3
+  Display: '&f&lGhoul'
+  Drops:
+  - rotten_flesh 0-2 1
+  - iron_ingot 1 0.025
+  - carrot 1 0.025
+  - potato 1 0.025
+  - exp 5 1
+  - nautilus_shell 1 0.10
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 1 villagers
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=PartOfThePack} ~onDamaged 1
+  - skill{s=GhoulBite} @target ~onAttack 0.25
+  - potion{type=SLOW;duration=140;lvl=1} ~onDamaged
+  
+  
+CreatureOfTheSea:
+  Type: drowned
+  Equipment:
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: false
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 30
+  Damage: 2
+  Display: '&f&lCreature of the Sea'
+  Drops:
+  - rotten_flesh 0-2 1
+  - gold_ingot 1 0.05
+  - trident 1 0.085
+  - nautilus_shell 1 0.10
+  - exp 5 1
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=KingOfTheSea} ~onTimer:100
+  - skill{s=DrownedItemEquip} @self ~onTimer:220
+  - skill{s=HealingPrison} @self ~onDamaged 0.15
+UndeadPiglin:
+  Type: zombified_piglin
+  Equipment:
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: false
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 30
+  Damage: 3
+  Display: '&f&lUndead Piglin'
+  Drops:
+  - rotten_flesh 0-1 1
+  - gold_nugget 0-1 1
+  - golden_sword 1 0.085
+  - exp 5 1
+  - nautilus_shell 1-2 0.25
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=HungeringStrike} @target ~onTimer:70
+  - skill{s=SliceAndDice} @target ~onTimer:270
+  - skill{s=LastStand} @self =50% ~onDamaged 1
+  
+CursedPiglin:
+  Type: piglin
+  Equipment:
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: false
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 40
+  Damage: 4
+  Display: '&f&lCursed Piglin'
+  Drops:
+  - crossbow 1 0.085
+  - golden_sword 1 0.085
+  - exp 5 1
+  - nautilus_shell 1 0.25
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=PiercingBolt} @target ~onTimer:70
+  - skill{s=Rush} @target ~onTimer:160
+  - skill{s=BerserkingStance} ~onDamaged 0.15
+  
+CrawlingCreeper:
+  Type: creeper
+  Equipment:
+  - stone_button:4
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: false
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 30
+  Damage: 1.5
+  Display: '&f&lCrawling Creeper'
+  Drops:
+  - gunpowder 0-2 1
+  - exp 5 1
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Skills:
+  - setstance{stance=normal} @self ~onSpawn 1
+  - skill{s=CreeperDanceCheck} ~onTimer:160
+  - skill{s=CreeperExplosionCheck} ~onTimer:20
+  - skill{s=ThunderingExplosion} ~onTimer:180
+  
+NightSeeker:
+  Type: phantom
+  Equipment:
+  Options:
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: false
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  DamageModifiers:
+  - FIRE 1
+  - WIND 1
+  - WATER 1
+  - COSMIC 1
+  - POISON 1
+  - VOID 1
+  - TIME 1
+  - THUNDER 1
+  Health: 40
+  Damage: 2
+  Display: '&f&lNight Seeker'
+  Drops:
+  - phantom_membrane 0-2 1
+  - exp 5 1
+  - nautilus_shell 1 0.10
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=PhantomBolt} @target ~onTimer:170
+  - skill{s=WarpBlind} @target ~onTimer:30
+  - skill{s=NightHunter} @target ~onAttack 0.33
