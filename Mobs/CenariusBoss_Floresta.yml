@@ -1,0 +1,363 @@
+# 
+# These example files show you some of the basic attributes and
+# skills MythicMobs can use. Far more is possible!
+TempestWind:
+  Mobtype: ZOMBIE
+  Health: 1000
+  Display: '&aTornado'
+  Damage: 1
+  ShowHealth: False
+  Despawn: True
+  DamageModifiers:
+  - DROWNING 0
+  - BLOCK_EXPLOSION 0
+  - ENTITY_EXPLOSION 0
+  - LIGHTNING 0
+  - STARVATION 0
+  - POISON 0
+  - MAGIC 0
+  - WITHER 0
+  - FALLING_BLOCK 0
+  - THORNS 0
+  - CUSTOM 0
+  - LAVA 0
+  - MELTING 0
+  - FIRE_TICK 0
+  - FIRE 0
+  - FALL 0
+  - SUFFOCATION 0
+  - PROJECTILE 0
+  - ENTITY_ATTACK 0
+  - CONTACT 0
+  Options:
+    UseThreatTable: true
+    FollowRange: 75
+    MaxCombatDistance: 1
+    PreventOtherDrops: true
+    ReinforcementsChance: 0
+  Skills:
+  - potion{type=INVISIBILITY;l=1;d=9999} @self ~onSpawn
+  - potion{type=SPEED;l=2;d=999} @self ~onSpawn
+  - effect:particles{particle=fireworksSpark;amount=250;hs=1;vs=10;speed=.1} @self ~onTimer:5
+  - effect:particles{particle=hugeexplosion;amount=5;hs=.5;vs=3;speed=.1;y=20} @self ~onTimer:5
+  - effect:particles{particle=largeexplode;amount=50;hs=.5;vs=12;speed=.1} @self ~onTimer:5
+  - sound{s=mob.wither.idle;v=2} @self ~onTimer:5
+  - throw{velocity=35;velocityY=10} @PlayersInRadius{r=2} ~onTimer:5
+  - remove{delay=400} @self ~onSpawn
+  KillMessages:
+  - '<target.name> foi dilacerado pelo rápido &a<mob.name>'
+  - '&a<mob.name> &fparticipou do desaparecimento de <target.name>'
+  Equipment:
+  - STONE_BUTTON:4
+Druid4:
+  Type: BABY_ZOMBIE
+  Equipment:
+  - stone_button:4
+  - stone_sword hand
+  Options:
+    FollowRange: 50
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.30 
+    KnockbackResistance: 0.25 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 80
+  Damage: 8
+  Display: '&l&2Druida'
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Skills:
+  - remove{delay=600} @self ~onSpawn
+  - threat{amount=10000} @NearestPlayer ~onSpawn 1
+Druid3:
+  Type: BABY_ZOMBIE
+  Equipment:
+  - stone_button:4
+  - stone_sword hand
+  Options:
+    FollowRange: 50
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 0.25 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 80
+  Damage: 8
+  Display: '&2&lDruida'
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Skills:
+  - remove{delay=600} @self ~onSpawn
+  - threat{amount=10000} @NearestPlayer ~onSpawn 1
+Druid2:
+  Type: BABY_ZOMBIE
+  Equipment:
+  - stone_button:4
+  - stone_sword hand
+  Options:
+    FollowRange: 50
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 0.25 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 80
+  Damage: 8
+  Display: '&2&lDruida'
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Skills:
+  - remove{delay=600} @self ~onSpawn
+  - threat{amount=10000} @NearestPlayer ~onSpawn 1
+Druid1:
+  Type: BABY_ZOMBIE
+  Equipment:
+  - stone_button:4
+  - stone_sword hand
+  Options:
+    FollowRange: 50
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25 
+    AttackSpeed: 0.35 
+    KnockbackResistance: 0.25
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 80
+  Damage: 8
+  Display: '&2&lDruida'
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Skills:
+  - remove{delay=600} @self ~onSpawn
+  - threat{amount=10000} @NearestPlayer ~onSpawn 1
+PortalE3:
+  Type: chicken
+  Display: '&2&lPortal'
+  Invisible: true
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 50
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=SLOW;duration=9999999;lvl=10} @self ~onSpawn 1
+  - skill{s=GreenBolt} @NearestPlayer{r=40} ~onTimer:200
+  - skill{s=PortalE} ~onTimer:10
+  - skill{s=PortalSpawn} ~onTimer:400
+  - skill{s=PortalRemove} @self ~onSignal:Portal
+PortalE2:
+  Type: chicken
+  Display: '&2&lPortal'
+  Invisible: true
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 50
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=SLOW;duration=9999999;lvl=10} @self ~onSpawn 1
+  - skill{s=GreenBolt} @NearestPlayer{r=40} ~onTimer:200
+  - skill{s=PortalE} ~onTimer:10
+  - skill{s=PortalSpawn} ~onTimer:200
+  - skill{s=PortalRemove} @self ~onSignal:Portal
+PortalE1:
+  Type: chicken
+  Display: '&2&lPortal'
+  Invisible: true
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 RandomStroll
+  - 2 AvoidArrows
+  - 3 LookAtPlayers
+  - 4 MoveTowardsTarget
+  AITargetSelectors:
+  - 0 clear
+  - 1 Monsters
+  Options:
+    Silent: true
+    Despawn: true
+    FollowRange: 50
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    KnockbackResistance: 1.0
+    PreventMobKillDrops: true
+  Skills:
+  - potion{type=SLOW;duration=9999999;lvl=10} @self ~onSpawn 1
+  - skill{s=GreenBolt} @NearestPlayer{r=40} ~onTimer:200
+  - skill{s=PortalE} ~onTimer:10
+  - skill{s=PortalSpawn} ~onTimer:600
+  - skill{s=PortalRemove} @self ~onSignal:Portal
+CenariusBoss_Floresta:
+  Type: zombie
+  Equipment:
+  - stone_button:4
+  - stone_sword hand
+  BossBar:
+    Enabled: true
+    Title: '&2&lCenarius &7&l<mob.hp>&4<&heart>'
+    Range: 50
+    Color: GREEN
+    Style: SOLID
+  Options:
+    FollowRange: 50
+    Despawn: true
+    Silent: false
+    PreventMobKillDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.35  
+    AttackSpeed: 0.35 
+    KnockbackResistance: 1 
+    PreventOtherDrops: true
+    ModifyBoundingBox: true
+  Health: 2000
+  Damage: 20
+  Display: '&2&lCenarius'
+  DamageModifiers:
+  - PROJECTILE 0.75
+  - FIRE 0
+  - FIRE_TICK 0
+  Drops:
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Skills:
+  - skill{s=GreenShield} =100%-36% @self ~onTimer:400
+  - skill{s=PurpleShield} =36%-0% @self ~onTimer:400
+  - skill{s=AuraPoison} @target >0 0.2
+  - message{m="<mob.name><&co> &7A impureza deve ser limpa!"} @PlayersInRadius{r=50} ~onEnterCombat 1
+  - message{m="<mob.name><&co> &7Pai! Eu falhei com você..."} @PlayersInRadius{r=50} ~onDeath 1
+  - signal{s=Portal} @MobsInRadius{r=100;t=PortalE1,PortalE2,PortalE3} ~onDeath 1
+  - skill{s=Rips} =75%-36% ~onTimer:250
+  - skill{s=Missile} =35%-0% ~onTimer:300
+  - skill{s=Tears} =75%-36% ~onTimer:400
+  - skill{s=SummonTornado} =35%-0% ~onTimer:600
+  - skill{s=WolfForm} =75% ~onDamaged 1
+  - skill{s=SkeletonForm} =35% ~onDamaged 1
+  - skill{s=PortalAppear} =99% ~onDamaged 1
+  - skill{s=SpawnBanner1} ~onSpawn 1
